@@ -23,7 +23,7 @@ found in XFree86 4.3+ releases.
 
 %description -l pl
 Ten aplet jest prost± nak³adk± dla rozszerzenia xrandr dzia³aj±c± na
-panelu gnome i pozwalaj±c± na zmianê rozdzielczo¶ci.
+panelu GNOME i pozwalaj±c± na zmianê rozdzielczo¶ci.
 
 %prep
 %setup -q -n grandr_applet-%{version}
