@@ -2,17 +2,18 @@ Summary:	Frontend to the xrandr extension
 Summary(pl):	Nak³adka na rozszerzenie xrandr
 Name:		gnome-applet-grandr
 Version:	0.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://handhelds.org/~mallum/downloadables/grandr_applet-%{version}.tar.gz
 # Source0-md5:	873e08f69d6e2c4d9d433895f3a5dfd4
+Patch0:		%{name}-libXext.patch
+BuildRequires:	XFree86-devel >= 4.2.99
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	XFree86-devel >= 4.2.99
-BuildRequires:	gnome-panel-devel
+BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
 BuildRequires:	gtk+2-devel
-BuildRequires:	libgnomeui-devel
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 Requires:	XFree86 >= 4.2.99
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +27,7 @@ panelu gnome i pozwalaj±c± na zmianê rozdzielczo¶ci.
 
 %prep
 %setup -q -n grandr_applet-%{version}
+%patch0 -p1
 
 %build
 rm -f missing
