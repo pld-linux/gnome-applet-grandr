@@ -14,6 +14,7 @@ BuildRequires:	automake
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	pkgconfig
 Requires:	XFree86 >= 4.2.99
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
