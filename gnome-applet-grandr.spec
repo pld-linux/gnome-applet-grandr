@@ -15,7 +15,7 @@ BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 Requires:	XFree86 >= 4.2.99
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This applet is a simple gnome-panel frontend to the xrandr extension
