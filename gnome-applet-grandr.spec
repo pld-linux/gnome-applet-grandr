@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://handhelds.org/~mallum/downloadables/grandr_applet-%{version}.tar.gz
+# Source0-md5:	873e08f69d6e2c4d9d433895f3a5dfd4
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	XFree86-devel >= 4.2.99
