@@ -1,0 +1,21 @@
+diff -urN aaa/grandr_applet-0.2/configure.in grandr_applet-0.2/configure.in
+--- aaa/grandr_applet-0.2/configure.in	2003-04-01 15:10:53.000000000 +0200
++++ grandr_applet-0.2/configure.in	2003-08-01 12:34:21.000000000 +0200
+@@ -37,7 +37,7 @@
+              [AC_CHECK_HEADER(X11/extensions/Xrandr.h,
+                               RANDR_LIBS=-lXrandr found_randr=yes,,
+                                 [#include <X11/Xlib.h>])],
+-               , -lXrender $ALL_X_LIBS )
++               , -lXrender -lXext $ALL_X_LIBS )
+ 
+ if test "x$found_randr" = "xno"; then
+    AC_MSG_ERROR(["Suitable Xrandr extension library not found - you need at least X 4.3"])
+diff -urN aaa/grandr_applet-0.2/src/Makefile.am grandr_applet-0.2/src/Makefile.am
+--- aaa/grandr_applet-0.2/src/Makefile.am	2003-03-31 17:37:08.000000000 +0200
++++ grandr_applet-0.2/src/Makefile.am	2003-08-01 12:34:43.000000000 +0200
+@@ -14,4 +14,4 @@
+ grandr_SOURCES =         \
+         grandr.c
+ 
+-grandr_LDADD = $(GRANDR_APPLET_LIBS) $(ALL_X_LIBS) -lXrandr -lXrender
++grandr_LDADD = $(GRANDR_APPLET_LIBS) $(ALL_X_LIBS) -lXrandr -lXrender -lXext
