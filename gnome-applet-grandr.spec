@@ -1,5 +1,5 @@
 Summary:	Frontend to the xrandr extension
-Summary(pl):	Nak³adka na rozszerzenie xrandr
+Summary(pl.UTF-8):   NakÅ‚adka na rozszerzenie xrandr
 Name:		gnome-applet-grandr
 Version:	0.2
 Release:	2
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This applet is a simple gnome-panel frontend to the xrandr extension
 found in XFree86 4.3+ releases.
 
-%description -l pl
-Ten aplet jest prost± nak³adk± dla rozszerzenia xrandr dzia³aj±c± na
-panelu GNOME i pozwalaj±c± na zmianê rozdzielczo¶ci.
+%description -l pl.UTF-8
+Ten aplet jest prostÄ… nakÅ‚adkÄ… dla rozszerzenia xrandr dziaÅ‚ajÄ…cÄ… na
+panelu GNOME i pozwalajÄ…cÄ… na zmianÄ™ rozdzielczoÅ›ci.
 
 %prep
 %setup -q -n grandr_applet-%{version}
