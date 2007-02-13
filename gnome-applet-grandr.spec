@@ -1,5 +1,5 @@
 Summary:	Frontend to the xrandr extension
-Summary(pl.UTF-8):   Nakładka na rozszerzenie xrandr
+Summary(pl.UTF-8):	Nakładka na rozszerzenie xrandr
 Name:		gnome-applet-grandr
 Version:	0.2
 Release:	2
