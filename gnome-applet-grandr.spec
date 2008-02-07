@@ -1,20 +1,21 @@
 Summary:	Frontend to the xrandr extension
-Summary(pl.UTF-8):	Nakładka na rozszerzenie xrandr
+Summary(pl.UTF-8):	Graficzny interfejs do rozszerzenia xrandr
 Name:		gnome-applet-grandr
 Version:	0.4.1
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://dekorte.homeip.net/download/grandr-applet/grandr_applet-%{version}.tar.gz
 # Source0-md5:	e5503535fad10b1f6e97ed1c1af18960
+Patch0:		%{name}-link.patch
 URL:		http://dekorte.homeip.net/download/grandr-applet/
-Patch0:		%{name}-libXext.patch
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libXrandr-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,9 +31,9 @@ panelu GNOME i pozwalającą na zmianę rozdzielczości.
 %patch0 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -43,12 +44,14 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang grandr_applet
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f grandr_applet.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS ChangeLog README
 %attr (755,root,root) %{_libdir}/grandr
-%{_libdir}/bonobo/servers/*
-%{_pixmapsdir}/*
+%{_libdir}/bonobo/servers/GrandrApplet.server
+%{_pixmapsdir}/grandr.png
