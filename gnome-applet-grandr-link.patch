@@ -1,0 +1,11 @@
+--- grandr_applet-0.4.1/configure.in.orig	2007-12-13 17:19:08.000000000 +0100
++++ grandr_applet-0.4.1/configure.in	2008-02-07 17:15:30.893025096 +0100
+@@ -25,7 +25,7 @@
+ 
+ AC_PATH_XTRA
+ 
+-ALL_X_LIBS="$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
++ALL_X_LIBS="$X_LIBS -lX11 $X_EXTRA_LIBS"
+ 
+ PKG_CHECK_MODULES(GRANDR_APPLET, [libgnomeui-2.0 libpanelapplet-2.0 gtk+-2.0 glib-2.0])
+ AC_SUBST(GRANDR_APPLET_CFLAGS)
