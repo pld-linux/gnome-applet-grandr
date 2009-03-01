@@ -2,13 +2,14 @@ Summary:	Frontend to the xrandr extension
 Summary(pl.UTF-8):	Graficzny interfejs do rozszerzenia xrandr
 Name:		gnome-applet-grandr
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://dekorte.homeip.net/download/grandr-applet/grandr_applet-%{version}.tar.gz
+Source0:	http://kdekorte.googlepages.com/grandr_applet-%{version}.tar.gz
 # Source0-md5:	e5503535fad10b1f6e97ed1c1af18960
 Patch0:		%{name}-link.patch
-URL:		http://dekorte.homeip.net/download/grandr-applet/
+Patch1:		%{name}-libpath.patch
+URL:		http://kdekorte.googlepages.com/grandr_applet
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
@@ -29,6 +30,7 @@ panelu GNOME i pozwalającą na zmianę rozdzielczości.
 %prep
 %setup -q -n grandr_applet-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
@@ -51,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f grandr_applet.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog README NEWS
 %attr (755,root,root) %{_libdir}/grandr
 %{_libdir}/bonobo/servers/GrandrApplet.server
 %{_pixmapsdir}/grandr.png
