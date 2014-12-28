@@ -12,7 +12,7 @@ Patch1:		%{name}-libpath.patch
 URL:		http://kdekorte.googlepages.com/grandr_applet
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
 BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
