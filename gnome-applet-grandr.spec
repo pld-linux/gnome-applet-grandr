@@ -30,8 +30,8 @@ panelu GNOME i pozwalającą na zmianę rozdzielczości.
 
 %prep
 %setup -q -n grandr_applet-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__aclocal}
